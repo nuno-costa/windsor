@@ -1,7 +1,12 @@
-# PHP dev task
+# Symfony dev task
 
-Windsor Telecom wish to sell products to their customers. They will do this via an order system. There are two types of orders, free trial and contract. Each order will go
- through 4 core stages and there will be additional stages for each type.
+Thank you for taking the time to complete this test. Good luck!
+
+## Background
+
+Windsor Telecom wish to sell products to their customers. They will do this via an order system. There are two types of orders; free trial and contract. Each order will go
+ through 4 core stages and there will be additional stages for each type. It is likely that other order types will be added in the future. The following stages are required right now.
+
 - Created
 - Approved
 - Signed (contract only)
@@ -10,27 +15,32 @@ Windsor Telecom wish to sell products to their customers. They will do this via 
 - Expired (free trial only)
 
 When a stage has been completed the following actions should happen:
+
 - Created - email the customer with their requested order
 - Approved - email the customer with a link to signing the contract (contract only)
-- Signed - store the pdf on our server (this will be retrieve via an api call using the order ID)
+- Signed - store the PDF on our server (this will be retrieve via an API call using the order ID)
 - Delivered - email the sales team to follow up with the customer
-- Completed - No action required
+- Completed - no action required
 - Expired - email the customer to alert them the trial has expired, and to email the sales team to follow up with the customer (trial only)
 
-You are not expected to code these actions, however you should showcase how these will be triggered with some placeholder code.
+We have included these actions and their purpose for illustration purposes only, you are not expected to implement each action, however you should showcase how the required functionality may be structured and triggered.
+
+## Tasks
 
 Using the Symfony project skeleton we have given, you are required to complete the following tasks:
+
 - Create entities for your solution (feel free to add whatever fields you would like)
 - Ability to transition between stages via API endpoint
 - Showcase your code structure for how the actions will be triggered
 - Any required database migrations
 - Some data fixtures to help you while developing
 
-Please feel free to add any packages to help you implement this project
+Please feel free to add any external packages to help you implement this project.
 
 ## The minimum requirements for the application are:
+
 - Write an implementation to handle the order stages in PHP7 and Symfony
-- Explain your approach to solving the task
+- Explain your approach to completing the tasks
 - Explain your assumptions and what other questions you would ask the user to ensure that you have all the information that you need to solve the task
 - Include unit tests, with any placeholder documentation that someone might need to continue working on your solution
 
