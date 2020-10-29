@@ -52,11 +52,15 @@ We are not expecting a full solution and are just looking for an insight on how 
 
 ## Up and running with Docker
 
+Before using docker please ensure you have run the following commands:
+`cp docker/.env.dist docker/.env`
+`cp .env .env.local`
+
+If you would like to change any ports you can do so in `docker/.env`. 
+
 To get the project up and running for the first time run `make build`.
 After this you can run `make up` to spin up the containers and `make bash` to run a bash command inside the `php-fpm` container.
 If you would like to rebuild the project at anytime you can run `make build` again. 
 
 Please note when setting up the project, if you encounter permission issues, ensure that your local user id and group id has been set correctly in `/docker/.env`
 To find out your user and group id run `id` in you terminal for Mac and Linux. For Windsows run `id -u` for user id and `id -g` for group id  
-
-You can also change the ports in the `docker/.env` file too. 

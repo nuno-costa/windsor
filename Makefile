@@ -1,10 +1,7 @@
 container=php-fpm
 folder=docker
 
-build: copy-env rm up composer-install
-copy-env:
-	cp --no-clobber docker/.env.dist docker/.env
-	cp --no-clobber .env .env.local
+build: rm up composer-install
 rm:
 	cd ${folder} && docker-compose stop
 	cd ${folder} && docker-compose rm -v -f
@@ -17,3 +14,5 @@ bash:
 	cd ${folder} && docker-compose exec ${container} /bin/bash
 composer-install:
 	cd ${folder} && docker-compose run --rm ${container} sh -lc 'composer install'
+test:
+	cd ${folder} && docker-compose run --rm ${container} sh -lc 'bin/phpunit'
