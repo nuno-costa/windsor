@@ -16,3 +16,10 @@ composer-install:
 	cd ${folder} && docker-compose run --rm ${container} sh -lc 'composer install'
 test:
 	cd ${folder} && docker-compose run --rm ${container} sh -lc 'bin/phpunit'
+dummy-data:
+	cd ${folder} && docker-compose run --rm ${container} sh -lc 'bin/console doctrine:database:import  ./tests/fixtures/sample_data.sql'
+migrate:
+	cd ${folder} && docker-compose run --rm ${container} sh -lc 'bin/console doctrine:migrations:migrate -n'
+
+
+
